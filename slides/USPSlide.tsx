@@ -2,103 +2,116 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SlideProps } from '../types';
-import { ShieldCheck, Heart, Sun, Sprout, Leaf, Wind, Flower2, Droplets } from 'lucide-react';
+import { Shield, Zap, Heart, Trophy, Leaf, Orbit, Sparkles } from 'lucide-react';
 
 const USPSlide: React.FC<SlideProps> = () => {
   const items = [
     { 
-      icon: Sprout, 
-      title: "Chăm Sóc Từ Gốc", 
-      color: "#10b981", 
-      desc: "Phác đồ dựa trên nhịp sinh học tự nhiên của từng giống cây, đảm bảo sự phát triển bền vững nhất.",
-      shape: "rounded-[60px_20px_60px_20px]"
+      icon: Shield, 
+      title: "Dữ Liệu Khách Quan", 
+      color: "emerald", 
+      hex: "#10b981",
+      desc: "Phác đồ khoa học dựa trên cảm biến IoT chính xác, loại bỏ mọi phỏng đoán cảm tính trong chăm sóc cây."
     },
     { 
-      icon: Sun, 
-      title: "Môi Trường Lý Tưởng", 
-      color: "#f59e0b", 
-      desc: "Giả lập ánh sáng và độ ẩm tối ưu, mang cả bầu không khí thiên nhiên vào không gian đô thị.",
-      shape: "rounded-[20px_60px_20px_60px]"
+      icon: Zap, 
+      title: "Một Chạm Duy Nhất", 
+      color: "blue", 
+      hex: "#3b82f6",
+      desc: "Toàn bộ quy trình đặt lịch, theo dõi sức khỏe và nhận báo cáo gói gọn trong một ứng dụng duy nhất."
     },
     { 
-      icon: ShieldCheck, 
-      title: "Cam Kết An Tâm", 
-      color: "#3b82f6", 
-      desc: "Sự bảo đảm tuyệt đối cho những mầm xanh với quy trình theo dõi và bảo vệ 24/7.",
-      shape: "rounded-[60px_60px_20px_60px]"
+      icon: Trophy, 
+      title: "Bảo Hiểm Toàn Diện", 
+      color: "orange", 
+      hex: "#f59e0b",
+      desc: "Cam kết bồi hoàn 100% giá trị cây nếu xảy ra rủi ro trong quá trình lưu trú hoặc điều trị."
     },
     { 
       icon: Heart, 
-      title: "Kết Nối Tâm Hồn", 
-      color: "#ef4444", 
-      desc: "Nuôi dưỡng sợi dây gắn kết giữa người và cây thông qua những câu chuyện tăng trưởng riêng biệt.",
-      shape: "rounded-[20px_60px_60px_60px]"
+      title: "Trải Nghiệm Cảm Xúc", 
+      color: "purple", 
+      hex: "#8b5cf6",
+      desc: "Không chỉ là dịch vụ, chúng tôi lưu giữ hành trình lớn khôn của cây như một phần tâm hồn của chủ nhân."
     }
   ];
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-full">
-      {/* Tiêu đề chính tập trung */}
+    <div className="flex flex-col items-center justify-center py-10">
+      {/* Tiêu đề slide */}
       <motion.div 
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="text-center mb-20 relative"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-center mb-16"
       >
-        <h2 className="text-6xl md:text-8xl font-black italic tracking-tighter uppercase text-white leading-none relative z-10">
-          GIÁ TRỊ <span className="text-emerald-500 drop-shadow-[0_0_30px_rgba(16,185,129,0.3)]">NGUYÊN BẢN</span>
-        </h2>
-        <div className="absolute -top-6 -left-10 opacity-10 animate-pulse">
-          <Leaf size={100} className="text-emerald-500 rotate-[-15deg]" />
+        <div className="flex items-center justify-center gap-2 mb-4">
+          <Sparkles className="text-emerald-500" size={20} />
+          <span className="text-emerald-500 font-black uppercase tracking-[0.4em] text-[12px] block">Lợi thế cạnh tranh</span>
+          <Sparkles className="text-emerald-500" size={20} />
         </div>
+        <h2 className="text-5xl md:text-6xl font-black italic tracking-tighter uppercase text-slate-900 dark:text-white leading-tight">
+          GIÁ TRỊ <span className="text-emerald-500 drop-shadow-[0_0_15px_rgba(16,185,129,0.2)]">ĐỘC BẢN</span>
+        </h2>
+        <div className="mt-4 w-24 h-1.5 bg-emerald-500 mx-auto rounded-full opacity-50" />
       </motion.div>
 
-      {/* Grid thiết kế không đối xứng để tránh trùng lặp hình thức */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl px-4">
+      {/* Grid hiển thị các "nút" (thẻ giá trị) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
         {items.map((item, i) => {
           const Icon = item.icon;
           return (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: i * 0.15, type: "spring", stiffness: 100 }}
-              whileHover={{ scale: 1.02, y: -5 }}
-              className={`group p-8 backdrop-blur-3xl border border-emerald-500/10 bg-emerald-950/20 shadow-2xl flex items-start gap-6 transition-all cursor-default relative overflow-hidden ${item.shape}`}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="group p-8 backdrop-blur-xl rounded-[45px] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-2xl flex gap-6 items-start transition-all cursor-default relative overflow-hidden"
             >
-              {/* Trang trí background độc bản cho mỗi thẻ */}
-              <div className="absolute -bottom-10 -right-10 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
-                {i === 0 && <Sprout size={160} />}
-                {i === 1 && <Sun size={160} />}
-                {i === 2 && <ShieldCheck size={160} />}
-                {i === 3 && <Heart size={160} />}
-              </div>
-
-              {/* Icon Section */}
+              {/* Trang trí góc thẻ */}
               <div 
-                className="w-14 h-14 shrink-0 rounded-xl flex items-center justify-center relative z-10" 
-                style={{ backgroundColor: `${item.color}15`, border: `1px solid ${item.color}30` }}
+                className="absolute top-0 right-0 w-24 h-24 opacity-5 group-hover:opacity-10 transition-opacity"
+                style={{ color: item.hex }}
               >
-                <Icon size={28} style={{ color: item.color }} className="group-hover:rotate-12 transition-transform duration-500" />
+                <Icon size={96} strokeWidth={1} />
               </div>
 
-              {/* Text Section */}
-              <div className="relative z-10 flex flex-col items-start text-left">
-                <h3 className="font-black text-xl italic uppercase tracking-tighter text-white mb-2 group-hover:text-emerald-400 transition-colors">
+              {/* Icon container */}
+              <div 
+                className="p-5 rounded-3xl shadow-inner flex-shrink-0 transition-transform group-hover:rotate-12 group-hover:scale-110 duration-500" 
+                style={{ backgroundColor: `${item.hex}15` }}
+              >
+                <Icon size={32} style={{ color: item.hex }} />
+              </div>
+
+              {/* Content */}
+              <div className="text-left relative z-10">
+                <h3 className="font-black text-xl italic uppercase tracking-tighter text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors mb-2">
                   {item.title}
                 </h3>
-                <p className="text-xs font-medium text-slate-400 leading-relaxed italic">
+                <p className="text-sm font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic">
                   {item.desc}
                 </p>
-              </div>
-
-              {/* Ký hiệu nhỏ tạo điểm nhấn khác biệt */}
-              <div className="absolute top-4 right-6 opacity-20">
-                {i % 2 === 0 ? <Flower2 size={14} /> : <Droplets size={14} />}
               </div>
             </motion.div>
           );
         })}
       </div>
+
+      {/* Chân slide đơn giản */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8 }}
+        className="mt-16 flex items-center gap-4 bg-slate-900/20 dark:bg-slate-900/60 px-10 py-4 rounded-full border border-slate-200 dark:border-slate-800"
+      >
+         <div className="flex items-center gap-3">
+            <Orbit className="text-emerald-500 animate-spin" size={16} style={{ animationDuration: '8s' }} />
+            <p className="text-[11px] font-black text-slate-600 dark:text-slate-400 uppercase tracking-[0.3em] italic">
+              KẾT NỐI GIÁ TRỊ THỰC TRÊN NỀN TẢNG <span className="text-emerald-500">SỐ HÓA TOÀN DIỆN</span>
+            </p>
+         </div>
+      </motion.div>
     </div>
   );
 };

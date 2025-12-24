@@ -89,7 +89,7 @@ const ManagementSlide: React.FC<SlideProps> = () => {
       >
         <div className="h-12 w-2 bg-emerald-500 rounded-full" />
         <h2 className="text-5xl font-black italic tracking-tighter uppercase text-slate-900 dark:text-white">
-          KẾ HOẠCH <span className="text-emerald-500">QUẢN LÝ</span>
+          <span className="text-emerald-500">KẾ HOẠCH QUẢN LÝ</span>
         </h2>
       </MDiv>
 
@@ -147,6 +147,8 @@ const ManagementSlide: React.FC<SlideProps> = () => {
         <p className="text-slate-700 dark:text-slate-400 italic text-sm">
           "Áp dụng mô hình <span className="text-slate-900 dark:text-white font-bold">Agile</span> kết hợp <span className="text-slate-900 dark:text-white font-bold">OKR</span>: Gọn nhẹ, linh hoạt và minh bạch."
         </p>
+        <p className="text-slate-700 dark:text-slate-400 italic text-sm">
+          "Loại hình doanh nghiệp: <span className="text-slate-900 dark:text-white font-bold">Công ty TNHH Hai Thành Viên Trở Lên (theo Luật Doanh nghiệp 2020).</span></p>
       </MDiv>
     </div>
   );

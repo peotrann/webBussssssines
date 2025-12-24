@@ -51,7 +51,7 @@ const TAMSlide: React.FC<SlideProps> = () => {
       >
         <div className="h-12 w-2 bg-emerald-500 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
         <h2 className="text-5xl font-black italic tracking-tighter uppercase text-slate-900 dark:text-white">
-          QUY MÔ <span className="text-emerald-500 underline decoration-emerald-500/20">THỊ TRƯỜNG</span>
+          <span className="text-emerald-500 underline decoration-emerald-500/20">QUY MÔ THỊ TRƯỜNG</span>
         </h2>
       </motion.div>
 

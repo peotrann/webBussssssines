@@ -35,7 +35,7 @@ const BMCSlide: React.FC<SlideProps> = () => {
       >
         <div className="h-10 w-2 bg-emerald-500 rounded-full" />
         <h2 className="text-4xl font-black italic tracking-tighter uppercase text-slate-900 dark:text-white">
-          BẢN VẼ MÔ HÌNH <span className="text-emerald-500">KINH DOANH</span>
+          <span className="text-emerald-500">BẢN VẼ MÔ HÌNH KINH DOANH</span>
         </h2>
       </motion.div>
 

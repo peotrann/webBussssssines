@@ -4,11 +4,12 @@ import { SlideProps } from '../types';
 import { Check, X, ShieldCheck, Zap, BarChart3, Star } from 'lucide-react';
 
 const data = [
-  { feature: "Công nghệ IoT / App", lalanh: true, trad: false, cleaning: false },
-  { feature: "Dịch vụ lưu trú (Hotel)", lalanh: true, trad: false, cleaning: false },
-  { feature: "Chẩn đoán bằng dữ liệu", lalanh: true, trad: false, cleaning: false },
-  { feature: "Cam kết bồi thường", lalanh: true, trad: false, cleaning: true },
-  { feature: "Giá cả linh hoạt (Lẻ/Gói)", lalanh: true, trad: true, cleaning: true },
+  { feature: "Công nghệ giám sát IoT/App", lalanh: true, trad: false, cleaning: false, freelancer: false },
+  { feature: "Dịch vụ lưu trú (Hotel)", lalanh: true, trad: false, cleaning: false, freelancer: false },
+  { feature: "Dịch vụ bệnh viện (Hospital)", lalanh: true, trad: true, cleaning: true, freelancer: true },
+  { feature: "Chẩn đoán bằng dữ liệu", lalanh: true, trad: false, cleaning: false, freelancer: false },
+  { feature: "Cam kết bồi thường", lalanh: true, trad: false, cleaning: true, freelancer: false },
+  { feature: "Chi phí, độ linh hoạt (Lẻ/Gói)", lalanh: true, trad: true, cleaning: true, freelancer: false },
 ];
 
 const CompetitorSlide: React.FC<SlideProps> = () => {
@@ -21,7 +22,7 @@ const CompetitorSlide: React.FC<SlideProps> = () => {
       >
         <div className="h-12 w-2 bg-emerald-500 rounded-full" />
         <h2 className="text-5xl font-black italic tracking-tighter uppercase text-slate-900 dark:text-white">
-          PHÂN TÍCH <span className="text-emerald-500">CẠNH TRANH</span>
+          <span className="text-emerald-500">PHÂN TÍCH CẠNH TRANH</span>
         </h2>
       </motion.div>
       
@@ -40,6 +41,7 @@ const CompetitorSlide: React.FC<SlideProps> = () => {
               </th>
               <th className="p-8 text-slate-500 dark:text-slate-600 font-bold text-center border-b border-slate-200 dark:border-slate-800">Nhà vườn truyền thống</th>
               <th className="p-8 text-slate-500 dark:text-slate-600 font-bold text-center border-b border-slate-200 dark:border-slate-800">Dịch vụ Vệ sinh</th>
+              <th className="p-8 text-slate-500 dark:text-slate-600 font-bold text-center border-b border-slate-200 dark:border-slate-800">Thợ tự do</th>
             </tr>
           </thead>
           <tbody>
@@ -53,9 +55,21 @@ const CompetitorSlide: React.FC<SlideProps> = () => {
                     </div>
                   </motion.div>
                 </td>
-                <td className="p-8 text-center border-b border-slate-100 dark:border-slate-800/50">
+                {/* <td className="p-8 text-center border-b border-slate-100 dark:border-slate-800/50">
                   <div className="flex justify-center"><X className="text-slate-400 dark:text-slate-700" size={24} /></div>
+                </td> */}
+                <td className="p-8 text-center border-b border-slate-100 dark:border-slate-800/50">
+                  <div className="flex justify-center">
+                    {row.trad ? (
+                      <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center border border-slate-200 dark:border-slate-700">
+                        <Check className="text-slate-600 dark:text-slate-500" size={16} />
+                      </div>                    
+                    ) : (
+                      <X className="text-slate-400 dark:text-slate-700" size={24} />
+                    )}
+                  </div>
                 </td>
+
                 <td className="p-8 text-center border-b border-slate-100 dark:border-slate-800/50">
                   <div className="flex justify-center">
                     {row.cleaning ? (
@@ -67,6 +81,19 @@ const CompetitorSlide: React.FC<SlideProps> = () => {
                     )}
                   </div>
                 </td>
+
+                <td className="p-8 text-center border-b border-slate-100 dark:border-slate-800/50">
+                  <div className="flex justify-center">
+                    {row.freelancer ? (
+                      <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center border border-slate-200 dark:border-slate-700">
+                        <Check className="text-slate-600 dark:text-slate-500" size={16} />
+                      </div>                    
+                    ) : (
+                      <X className="text-slate-400 dark:text-slate-700" size={24} />
+                    )}
+                  </div>
+                </td>
+
               </tr>
             ))}
           </tbody>

@@ -63,7 +63,7 @@ const PersonaSlide: React.FC<SlideProps> = () => {
       >
         <div className="h-12 w-2 bg-emerald-500 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
         <h2 className="text-5xl font-black italic tracking-tighter uppercase text-slate-900 dark:text-white">
-          CHÂN DUNG <span className="text-emerald-500 underline decoration-emerald-500/30">KHÁCH HÀNG</span>
+          <span className="text-emerald-500 underline decoration-emerald-500/30">THỊ TRƯỜNG MỤC TIÊU</span>
         </h2>
       </motion.div>
       

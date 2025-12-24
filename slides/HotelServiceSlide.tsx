@@ -13,14 +13,14 @@ const HotelServiceSlide: React.FC<SlideProps> = () => {
       >
         <div className="h-12 w-2 bg-emerald-500 rounded-full" />
         <h2 className="text-5xl font-black italic tracking-tighter uppercase text-slate-900 dark:text-white">
-          KHÁCH SẠN <span className="text-emerald-500">CÂY CẢNH</span>
+          <span className="text-emerald-500">KHÁCH SẠN CÂY CẢNH</span>
         </h2>
       </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
         <div className="lg:col-span-7 space-y-6">
           <p className="text-slate-700 dark:text-slate-400 text-lg mb-10 italic leading-relaxed">
-            Môi trường lưu trú <span className="text-slate-900 dark:text-white font-bold">tiêu chuẩn 5 sao</span>, giúp cây khỏe mạnh ngay cả khi chủ nhân vắng nhà.
+            Môi trường lưu trú tiêu chuẩn 5 sao, giúp cây khỏe mạnh ngay cả khi chủ nhân vắng nhà.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

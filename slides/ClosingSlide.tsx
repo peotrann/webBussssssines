@@ -72,14 +72,9 @@ const ClosingSlide: React.FC<SlideProps> = () => {
         
         {/* H2 container với leading-[2.5] và overflow-visible cực kỳ quan trọng để không cắt dấu */}
         <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 italic tracking-tight leading-[2.5] px-10 overflow-visible flex flex-wrap items-center justify-center gap-x-6">
-          <span className="text-white whitespace-nowrap inline-block py-2">
-            CẢM ƠN QUÝ VỊ ĐÃ
-          </span>
           <span className={`bg-clip-text text-transparent italic transition-all duration-500 inline-block py-4 px-8 -mx-4 whitespace-nowrap overflow-visible ${
             isHovered ? 'bg-gradient-to-r from-yellow-300 to-white' : 'bg-gradient-to-r from-emerald-400 to-blue-500'
-          }`}>
-            LẮNG NGHE!
-          </span>
+          }`}>CẢM ƠN QUÝ VỊ ĐÃ LẮNG NGHE!</span>
         </h2>
 
         {isHovered && (

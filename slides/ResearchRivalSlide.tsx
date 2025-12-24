@@ -4,18 +4,21 @@ import { motion } from 'framer-motion';
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts';
 import { SlideProps } from '../types';
 
+//Bạn đã từng sử dụng dịch vụ chăm sóc cây từ những mô hình nào dưới đây chưa?
 const pieData = [
-  { name: 'Nghiệp dư (thiếu kiến thức)', value: 43.1 },
-  { name: 'Hoàn toàn không biết', value: 19.8 },
-  { name: 'Có kiến thức cơ bản', value: 22.3 },
-  { name: 'Rất am hiểu', value: 14.9 },
+  { name: 'Nhà vườn, tiệm cây địa phương', value: 39.1 },
+  { name: 'Thợ tự do', value: 35.1 },
+  { name: 'Dịch vụ ngoại/trực tuyến (DVVS Hòa Mỹ)', value: 15.3 },
+  { name: 'Chưa từng', value: 10.5 },
 ];
 
-const barData = [
-  { name: 'Thiếu kiến thức chăm sóc', value: 88.6 },
-  { name: 'Không có thời gian', value: 84.2 },
-  { name: 'Sợ cây chết không rõ nguyên nhân', value: 58.4 },
-  { name: 'Đi công tác/du lịch', value: 65.3 },
+//Nếu đã dùng, thì mức độ hài lòng của bạn với dịch vụ đó là bao nhiêu?
+const pieeData = [
+  { name: 'Rất hài lòng', value: 4 },
+  { name: 'Hài lòng', value: 4 },
+  { name: 'Bình thường', value: 22.3 },
+  { name: 'Không hài lòng (Giá cao, Dịch vụ chưa tốt...', value: 30.7 },
+  { name: 'Chưa trải nghiệm', value: 39.1 },
 ];
 
 const COLORS = ['#10b981', '#ef4444', '#3b82f6', '#f59e0b'];
@@ -38,7 +41,7 @@ const MarketResearchSlide: React.FC<SlideProps> = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-[450px] md:h-96">
         <div className="bg-slate-900/40 p-6 rounded-[40px] border border-slate-800 flex flex-col">
-          <h3 className="text-lg font-bold mb-4 text-emerald-400 text-center">Mức độ am hiểu về kỹ thuật chăm sóc</h3>
+          <h3 className="text-lg font-bold mb-4 text-emerald-400 text-center">Các mô hình dịch vụ chăm sóc cây từng trải nghiệm</h3>
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
@@ -65,28 +68,31 @@ const MarketResearchSlide: React.FC<SlideProps> = () => {
         </div>
 
         <div className="bg-slate-900/40 p-6 rounded-[40px] border border-slate-800 flex flex-col">
-          <h3 className="text-lg font-bold mb-4 text-emerald-400 text-center">Khó khăn thường gặp (%)</h3>
+          <h3 className="text-lg font-bold mb-4 text-emerald-400 text-center">Mức độ hài lòng đối với dịch vụ</h3>
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={barData} layout="vertical">
-              <CartesianGrid strokeDasharray="3 3" stroke="#334155" horizontal={false} />
-              <XAxis type="number" hide />
-              <YAxis dataKey="name" type="category" width={120} stroke="#94a3b8" fontSize={10} />
+            <PieChart>
+              <Pie
+                data={pieeData}
+                cx="50%"
+                cy="50%"
+                innerRadius={60}
+                outerRadius={80}
+                paddingAngle={5}
+                dataKey="value"
+              >
+                {pieData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
               <Tooltip 
-                cursor={{ fill: 'rgba(16, 185, 129, 0.1)' }}
                 contentStyle={tooltipStyle.contentStyle}
                 itemStyle={tooltipStyle.itemStyle}
                 labelStyle={tooltipStyle.labelStyle}
               />
-              <Bar dataKey="value" fill="#10b981" radius={[0, 10, 10, 0]} />
-            </BarChart>
+              <Legend verticalAlign="bottom" height={36}/>
+            </PieChart>
           </ResponsiveContainer>
         </div>
-      </div>
-
-      <div className="mt-8 flex justify-center">
-         <div className="px-8 py-4 bg-emerald-600 rounded-full font-bold shadow-lg shadow-emerald-900/50 hover:scale-105 transition-transform cursor-default">
-            60% SẴN SÀNG TRẢ PHÍ ĐỂ GIẢM TỶ LỆ CÂY CHẾT
-         </div>
       </div>
     </div>
   );

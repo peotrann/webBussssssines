@@ -13,7 +13,7 @@ const HospitalServiceSlide: React.FC<SlideProps> = () => {
       >
         <div className="h-12 w-2 bg-blue-500 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5)]" />
         <h2 className="text-5xl font-black italic tracking-tighter uppercase text-slate-900 dark:text-white">
-          BỆNH VIỆN <span className="text-blue-500">CÂY CẢNH</span>
+          <span className="text-blue-500">BỆNH VIỆN CÂY CẢNH</span>
         </h2>
       </motion.div>
       

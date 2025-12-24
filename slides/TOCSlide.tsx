@@ -40,7 +40,7 @@ const TOCSlide: React.FC<SlideProps> = () => {
           <ListChecks className="text-emerald-400" size={32} />
         </div>
         <h2 className="text-5xl font-black italic tracking-tighter uppercase text-slate-900 dark:text-white">
-          MỤC LỤC <span className="text-slate-800/40 dark:text-emerald-500">CHIẾN LƯỢC</span>
+          <span className="text-slate-800/40 dark:text-emerald-500">MỤC LỤC CHIẾN LƯỢC</span>
         </h2>
       </motion.div>
       

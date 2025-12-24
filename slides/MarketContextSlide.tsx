@@ -13,7 +13,7 @@ const MarketContextSlide: React.FC<SlideProps> = () => {
       >
         <div className="h-12 w-2 bg-emerald-500 rounded-full" />
         <h2 className="text-5xl font-black italic tracking-tighter uppercase text-slate-900 dark:text-white">
-          BỐI CẢNH & <span className="text-emerald-500">CƠ HỘI</span>
+          <span className="text-emerald-500">BỐI CẢNH & CƠ HỘI</span>
         </h2>
       </motion.div>
       

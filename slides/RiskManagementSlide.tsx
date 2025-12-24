@@ -44,7 +44,7 @@ const RiskManagementSlide: React.FC<SlideProps> = () => {
       >
         <div className="h-10 w-2 bg-red-500 rounded-full shadow-[0_0_15px_rgba(239,68,68,0.5)]" />
         <h2 className="text-4xl font-black italic tracking-tighter uppercase text-slate-900 dark:text-white">
-          CHƯƠNG 07. QUẢN TRỊ <span className="text-red-500">RỦI RO</span>
+          <span className="text-red-500">QUẢN TRỊ RỦI RO</span>
         </h2>
       </motion.div>
       
@@ -147,7 +147,7 @@ const RiskManagementSlide: React.FC<SlideProps> = () => {
       </div>
 
       {/* RỦI RO KHÁC */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
          {[
            { type: "Tài Chính", icon: ShieldAlert, risk: "Dòng tiền âm giai đoạn đầu", solution: "Tối ưu hóa Capex qua việc thuê hạ tầng và đa dạng nguồn thu từ phụ phẩm." },
            { type: "Vận Hành", icon: AlertCircle, risk: "Lỗi hạ tầng trạm Micro", solution: "Hệ thống điện dự phòng & Quy trình SOP kiểm tra định kỳ hàng ngày." }
@@ -166,6 +166,50 @@ const RiskManagementSlide: React.FC<SlideProps> = () => {
                 <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{item.type}</p>
                 <p className="font-bold text-slate-900 dark:text-slate-200">{item.risk}</p>
                 <p className="text-[10px] text-slate-500 italic mt-1">{item.solution}</p>
+              </div>
+           </motion.div>
+         ))}
+      </div> */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+         {[
+           { type: "Vận Hành", icon: AlertCircle, risk: "Lỗi hạ tầng Server, các trạm Micro", solution: "Edge Computing (Vận hành Offline); Hạ tầng Cloud đa vùng Auto-scaling." },
+           { type: "Tài Chính", icon: ShieldAlert, risk: "Biến động thị trường, Dòng tiền âm giai đoạn đầu", solution: "Đa dạng hóa dòng tiền (IoT + Hotel + Phụ phẩm); Gói cước Membership cố định." },
+           { type: "Nhân Sự", icon: Info, risk: "Thiếu kỹ thuật viên", solution: "Liên kết thực tập sinh chuyên ngành; Chuẩn hóa quy trình vận hành (SOP) bằng Video." }
+         ].map((item, i) => (
+           <motion.div 
+             key={i}
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ delay: i * 0.1 }}
+             whileHover={{ y: -5 }}
+             className="group p-8 backdrop-blur-xl rounded-[40px] border transition-all relative overflow-hidden bg-white dark:bg-slate-900/60 border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none hover:border-red-500/30"
+           >
+              <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                 <item.icon size={120} className="text-red-500" />
+              </div>
+
+              <div className="flex items-center justify-between mb-8">
+                 <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                    <span className="text-xs font-black text-slate-500 uppercase tracking-widest">{item.type}</span>
+                 </div>
+                 <item.icon className="text-red-500 dark:text-red-500/50 group-hover:text-red-600 dark:group-hover:text-red-500 transition-colors" size={20} />
+              </div>
+              
+              <div className="space-y-6 relative z-10">
+                 <div>
+                    <p className="text-[10px] text-slate-500 uppercase font-black tracking-widest mb-1">Rủi ro chính</p>
+                    <p className="font-black text-xl italic tracking-tight transition-colors text-slate-900 dark:text-white group-hover:text-red-700 dark:group-hover:text-red-400">{item.risk}</p>
+                 </div>
+                 
+                 <div className="p-5 rounded-3xl border transition-all bg-emerald-50 dark:bg-emerald-600/5 border-emerald-100 dark:border-emerald-500/10 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-600/10 group-hover:border-emerald-500/30">
+                    <p className="text-[10px] text-emerald-700 dark:text-emerald-400 font-black uppercase tracking-widest mb-2 flex items-center gap-2">
+                       <ShieldCheck size={14} /> Chiến lược giảm thiểu
+                    </p>
+                    <p className="text-slate-700 dark:text-slate-400 text-sm italic leading-relaxed group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors">
+                      {item.solution}
+                    </p>
+                 </div>
               </div>
            </motion.div>
          ))}
