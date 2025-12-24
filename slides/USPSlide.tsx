@@ -37,23 +37,23 @@ const USPSlide: React.FC<SlideProps> = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-full py-20">
+    <div className="flex flex-col items-center justify-start min-h-full">
       {/* Tiêu đề chính tập trung */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="text-center mb-24 relative"
+        className="text-center mb-20 relative"
       >
-        <h2 className="text-7xl md:text-9xl font-black italic tracking-tighter uppercase text-white leading-none relative z-10">
+        <h2 className="text-6xl md:text-8xl font-black italic tracking-tighter uppercase text-white leading-none relative z-10">
           GIÁ TRỊ <span className="text-emerald-500 drop-shadow-[0_0_30px_rgba(16,185,129,0.3)]">NGUYÊN BẢN</span>
         </h2>
-        <div className="absolute -top-10 -left-10 opacity-10 animate-pulse">
-          <Leaf size={120} className="text-emerald-500 rotate-[-15deg]" />
+        <div className="absolute -top-6 -left-10 opacity-10 animate-pulse">
+          <Leaf size={100} className="text-emerald-500 rotate-[-15deg]" />
         </div>
       </motion.div>
 
       {/* Grid thiết kế không đối xứng để tránh trùng lặp hình thức */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-5xl px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl px-4">
         {items.map((item, i) => {
           const Icon = item.icon;
           return (
@@ -63,48 +63,41 @@ const USPSlide: React.FC<SlideProps> = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.15, type: "spring", stiffness: 100 }}
               whileHover={{ scale: 1.02, y: -5 }}
-              className={`group p-10 backdrop-blur-3xl border border-emerald-500/10 bg-emerald-950/20 shadow-2xl flex items-start gap-8 transition-all cursor-default relative overflow-hidden ${item.shape}`}
+              className={`group p-8 backdrop-blur-3xl border border-emerald-500/10 bg-emerald-950/20 shadow-2xl flex items-start gap-6 transition-all cursor-default relative overflow-hidden ${item.shape}`}
             >
               {/* Trang trí background độc bản cho mỗi thẻ */}
               <div className="absolute -bottom-10 -right-10 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
-                {i === 0 && <Sprout size={200} />}
-                {i === 1 && <Sun size={200} />}
-                {i === 2 && <ShieldCheck size={200} />}
-                {i === 3 && <Heart size={200} />}
+                {i === 0 && <Sprout size={160} />}
+                {i === 1 && <Sun size={160} />}
+                {i === 2 && <ShieldCheck size={160} />}
+                {i === 3 && <Heart size={160} />}
               </div>
 
               {/* Icon Section */}
               <div 
-                className="w-16 h-16 shrink-0 rounded-2xl flex items-center justify-center relative z-10" 
+                className="w-14 h-14 shrink-0 rounded-xl flex items-center justify-center relative z-10" 
                 style={{ backgroundColor: `${item.color}15`, border: `1px solid ${item.color}30` }}
               >
-                <Icon size={32} style={{ color: item.color }} className="group-hover:rotate-12 transition-transform duration-500" />
+                <Icon size={28} style={{ color: item.color }} className="group-hover:rotate-12 transition-transform duration-500" />
               </div>
 
               {/* Text Section */}
               <div className="relative z-10 flex flex-col items-start text-left">
-                <h3 className="font-black text-2xl italic uppercase tracking-tighter text-white mb-3 group-hover:text-emerald-400 transition-colors">
+                <h3 className="font-black text-xl italic uppercase tracking-tighter text-white mb-2 group-hover:text-emerald-400 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-sm font-medium text-slate-400 leading-relaxed italic">
+                <p className="text-xs font-medium text-slate-400 leading-relaxed italic">
                   {item.desc}
                 </p>
               </div>
 
               {/* Ký hiệu nhỏ tạo điểm nhấn khác biệt */}
-              <div className="absolute top-6 right-8 opacity-20">
-                {i % 2 === 0 ? <Flower2 size={16} /> : <Droplets size={16} />}
+              <div className="absolute top-4 right-6 opacity-20">
+                {i % 2 === 0 ? <Flower2 size={14} /> : <Droplets size={14} />}
               </div>
             </motion.div>
           );
         })}
-      </div>
-
-      {/* Decoration Elements Footer */}
-      <div className="mt-20 flex gap-4 opacity-20">
-        {[...Array(5)].map((_, i) => (
-          <div key={i} className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-        ))}
       </div>
     </div>
   );
