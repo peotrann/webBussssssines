@@ -41,36 +41,35 @@ const HotelServiceSlide: React.FC<SlideProps> = () => {
                 <div className={`w-12 h-12 bg-${item.color}-500/10 rounded-2xl flex items-center justify-center text-${item.color}-700 dark:text-${item.color}-400 group-hover:bg-${item.color}-600 group-hover:text-white transition-all`}>
                   <item.icon size={24} />
                 </div>
-                <h4 className="font-black uppercase tracking-tighter text-slate-800 dark:text-white">{item.title}</h4>
-                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors">{item.desc}</p>
+                <h4 className="font-black uppercase tracking-tighter text-slate-800 dark:text-white">
+                  {item.title}
+                </h4>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors">
+                  {item.desc}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
 
         <div className="lg:col-span-5 flex flex-col gap-6">
-           <motion.div 
-             whileHover={{ rotate: -2, scale: 1.02 }}
-             className="p-10 bg-emerald-600 rounded-[60px] text-center shadow-2xl shadow-emerald-900/40 relative overflow-hidden group cursor-pointer"
-           >
-              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:rotate-12 transition-transform">
-                <Star size={120} />
-              </div>
-              <Calendar className="mx-auto mb-6 text-white" size={48} />
-              <h4 className="font-black text-2xl text-white mb-4 uppercase italic">THỜI GIAN LINH HOẠT</h4>
-              <p className="text-emerald-50 font-medium leading-relaxed">Gửi từ <span className="text-white font-black text-xl">3 - 30 ngày</span>. <br/>Phù hợp cho mọi kỳ nghỉ hay chuyến công tác.</p>
-           </motion.div>
-
-           <motion.div 
-             initial={{ opacity: 0 }}
-             animate={{ opacity: 1 }}
-             className="p-10 border-2 border-dashed border-emerald-500/30 rounded-[60px] text-center relative bg-white dark:bg-slate-900/20 shadow-xl shadow-slate-200/50 dark:shadow-none"
-           >
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-white dark:bg-slate-800 rounded-full text-[10px] font-black text-emerald-600 dark:text-emerald-400 tracking-widest uppercase border border-emerald-500/20">INSIGHT</div>
-              <p className="text-slate-700 dark:text-slate-400 italic leading-relaxed">
-                "Hơn <span className="text-emerald-600 dark:text-emerald-400 font-bold">85%</span> người nuôi cây lo lắng cây sẽ héo úa khi họ không ở nhà quá 3 ngày."
-              </p>
-           </motion.div>
+          <motion.div 
+            whileHover={{ rotate: -2, scale: 1.02 }}
+            className="p-10 bg-emerald-600 rounded-[60px] text-center shadow-2xl shadow-emerald-900/40 relative overflow-hidden group cursor-pointer"
+          >
+            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:rotate-12 transition-transform">
+              <Star size={120} />
+            </div>
+            <Calendar className="mx-auto mb-6 text-white" size={48} />
+            <h4 className="font-black text-2xl text-white mb-4 uppercase italic">
+              THỜI GIAN LINH HOẠT
+            </h4>
+            <p className="text-emerald-50 font-medium leading-relaxed">
+              Gửi từ <span className="text-white font-black text-xl">3 - 30 ngày</span>.
+              <br />
+              Phù hợp cho mọi kỳ nghỉ hay chuyến công tác.
+            </p>
+          </motion.div>
         </div>
       </div>
     </div>
