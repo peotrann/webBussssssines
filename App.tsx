@@ -43,9 +43,9 @@ const slides = [
   TitleSlide,
   TOCSlide,
   ProblemSlide,
+  MarketContextSlide,
   MarketResearchSlide,
   SolutionSlide,
-  MarketContextSlide,
   MissionVisionSlide,
   ProductOverviewSlide,
   HotelServiceSlide,
@@ -70,16 +70,34 @@ const slides = [
 
 const getSectionName = (index: number) => {
   if (index <= 1) return '';
-  if (index <= 5) return '01. TÓM TẮT DỰ ÁN';
-  if (index <= 10) return '02. MÔ TẢ DOANH NGHIỆP & SẢN PHẨM';
-  if (index <= 15) return '03. CHIẾN LƯỢC MARKETING';
-  if (index <= 16) return '04. KẾ HOẠCH VẬN HÀNH';
-  if (index <= 17) return '05. KẾ HOẠCH QUẢN LÝ';
-  if (index <= 20) return '06. DỰ BÁO TÀI CHÍNH';
-  if (index <= 21) return '07. RỦI RO TRỌNG YẾU';
-  if (index === 22) return 'DEMO: HỆ THỐNG QUẢN TRỊ';
-  return '08. CHIẾN LƯỢC THU HOẠCH';
+
+  if (index <= 5)
+    return '01. TỔNG QUAN & VẤN ĐỀ';
+
+  if (index <= 10)
+    return '02. GIẢI PHÁP & SẢN PHẨM';
+
+  if (index <= 15)
+    return '03. THỊ TRƯỜNG & MARKETING';
+
+  if (index <= 17)
+    return '04. MÔ HÌNH KINH DOANH & VẬN HÀNH';
+
+  if (index <= 19)
+    return '05. ĐỘI NGŨ & LỘ TRÌNH';
+
+  if (index <= 22)
+    return '06. KẾ HOẠCH TÀI CHÍNH';
+
+  if (index === 23)
+    return '07. RỦI RO TRỌNG YẾU';
+
+  if (index === 24)
+    return 'DEMO: HỆ THỐNG QUẢN TRỊ';
+
+  return '08. TỔNG KẾT & ĐỊNH HƯỚNG';
 };
+
 
 const App: React.FC = () => {
   const MDiv = motion.div as any;
